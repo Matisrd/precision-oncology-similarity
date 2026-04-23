@@ -23,6 +23,6 @@ patient-similarity-oncology/
 30.04: Finish general litterature review and discuss together so we all have a good understanding of the subject. Start structuring notes for report.
 
 ### Work assignment
-take notes on one of the papers in the email and one of your liking (maybe best if each person sticks to one of the 4 parts: general, rule_based, graph, llm). Be able to explain it to the others.
-**Aurelien**: LLMs
+take notes on one of the papers in the email and one of your liking (maybe best if each person sticks to one of the 4 parts: general, rule_based, graph, llm). Be able to explain it to the others.    
+**Aurelien, Matis**: LLMs
 
