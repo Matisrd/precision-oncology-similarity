@@ -25,5 +25,6 @@ patient-similarity-oncology/
 ### Work assignment
 take notes on one of the papers in the email and one of your liking (maybe best if each person sticks to one of the 4 parts: general, rule_based, graph, llm). Be able to explain it to the others.    
 **Aurelien, Matis**: LLMs
-*Neila*: rule-based methods
+**Maxime**: Rule-based
+**Neila**: rule-based methods
 
