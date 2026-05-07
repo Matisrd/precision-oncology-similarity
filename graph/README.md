@@ -90,11 +90,60 @@ rare_mutated_genes
 common_mutated_genes
 ```
 
+Similarity results can also be written back into Neo4j as direct patient-to-patient
+relationships:
+
+```text
+(:Patient)-[:SIMILAR_TO {
+  metric,
+  score,
+  shared_feature_count,
+  source_feature_count,
+  candidate_feature_count,
+  shared_features
+}]->(:Patient)
+```
+
+To import a similarity result CSV:
+
+1. Copy `similar_patients_P-0000012.csv` into the Neo4j `import` folder.
+2. Open Neo4j Query/Browser.
+3. Set the import parameters:
+
+```cypher
+:param source_patient_id => 'P-0000012';
+:param similarity_file => 'similar_patients_P-0000012.csv';
+```
+
+4. Run:
+
+```text
+neo4j_import_similarity_results.cypher
+```
+
+To visualize the source patient, similar patients, and their shared feature graph:
+
+```cypher
+MATCH path = (source:Patient {id: 'P-0000012'})-[sim:SIMILAR_TO]->(similar:Patient)
+RETURN path
+ORDER BY sim.score DESC
+LIMIT 10;
+```
+
+To include the shared feature nodes:
+
+```cypher
+MATCH (source:Patient {id: 'P-0000012'})-[sim:SIMILAR_TO]->(similar:Patient)
+MATCH (source)-[r1]->(feature)<-[r2]-(similar)
+RETURN source, sim, similar, r1, feature, r2
+LIMIT 100;
+```
+
 ## Files in This Folder
 
 ```text
 README.md
 neo4j_import_patient_feature_graph.cypher
+neo4j_import_similarity_results.cypher
 graph_construction_summary.md
 ```
-
