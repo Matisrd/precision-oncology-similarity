@@ -37,7 +37,7 @@ common_gene = 1.5
 ## Run
 
 ```bash
-python3 similarity/patient_similarity.py \
+python3 graph/similarity/patient_similarity.py \
   --csv "/Users/neilabenlamri/Library/Application Support/neo4j-desktop/Application/Data/dbmss/dbms-dd383344-d629-407c-a647-1a0683dcc55c/import/patient_static_features.csv" \
   --patient-id P-0000012 \
   --top-n 10
@@ -46,7 +46,7 @@ python3 similarity/patient_similarity.py \
 To save the result:
 
 ```bash
-python3 similarity/patient_similarity.py \
+python3 graph/similarity/patient_similarity.py \
   --patient-id P-0000012 \
   --top-n 20 \
   --output results/similar_patients_P-0000012.csv
@@ -55,7 +55,7 @@ python3 similarity/patient_similarity.py \
 To use plain Jaccard:
 
 ```bash
-python3 similarity/patient_similarity.py \
+python3 graph/similarity/patient_similarity.py \
   --patient-id P-0000012 \
   --metric jaccard
 ```
@@ -63,7 +63,7 @@ python3 similarity/patient_similarity.py \
 To change weights:
 
 ```bash
-python3 similarity/patient_similarity.py \
+python3 graph/similarity/patient_similarity.py \
   --patient-id P-0000012 \
   --weight rare_gene=3 \
   --weight cancer_type_detailed=4
